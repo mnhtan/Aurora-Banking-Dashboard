@@ -55,28 +55,23 @@ These files are used to build relationships, calculate KPIs, and create dashboar
 
 ---
 
-## Dashboard Pages
 
-### 1. Overview
+## Dashboard Preview
 
-The Overview page summarizes total customers, active customers, total transactions, Net Successful Transaction Value, success rate, card type contribution, customer mix, merchant category performance, and monthly performance trends.
+### Overview Page
+![Overview Page](images/overview.png)
 
-### 2. Customer Segment
+### Customer Segment Page
+![Customer Segment Page](images/customer-segment.png)
 
-The Customer Segment page focuses on identifying which customer groups drive the most value. It analyzes customer value by age band, credit score band, income, activity level, and transaction frequency.
+### Merchant Analysis Page
+![Merchant Analysis Page](images/merchant-analysis.png)
 
-### 3. Merchant
+### Risk Analysis Page
+![Risk Analysis Page](images/risk-analysis.png)
 
-The Merchant page analyzes transaction performance across merchant categories, merchant groups, channels, weekdays, and time buckets. It helps identify where customers spend the most and which merchant areas contribute most to transaction value.
-
-### 4. Risk
-
-The Risk page highlights failed transaction behavior, insufficient balance exposure, failed transaction value, high-risk customer groups, and merchant groups with higher risk signals.
-
-### 5. Insight Page
-
-The Insight page provides a simple executive summary of the most important findings, focusing on performance, value drivers, merchant behavior, and risk areas.
-
+### Insight Page
+![Insight Page](images/insight-page.png)
 ---
 
 ## Tools Used
