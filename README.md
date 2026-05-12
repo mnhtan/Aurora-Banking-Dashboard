@@ -62,16 +62,16 @@ These files are used to build relationships, calculate KPIs, and create dashboar
 ![Overview Page](images/overview.png)
 
 ### Customer Segment Page
-![Customer Segment Page](images/customer-segment.png)
+![Customer Segment Page](images/customer.png)
 
 ### Merchant Analysis Page
-![Merchant Analysis Page](images/merchant-analysis.png)
+![Merchant Analysis Page](images/merchant.png)
 
 ### Risk Analysis Page
-![Risk Analysis Page](images/risk-analysis.png)
+![Risk Analysis Page](images/risk.png)
 
 ### Insight Page
-![Insight Page](images/insight-page.png)
+![Insight Page](images/insight.png)
 ---
 
 ## Tools Used
