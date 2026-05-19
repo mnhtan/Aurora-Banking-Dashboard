@@ -1,185 +1,239 @@
-# Aurora Banking Performance Dashboard
+# 🏦 Aurora Banking Performance Dashboard | Power BI
 
-## Overview
+![Cover](image/cover.png)
 
-Aurora Banking Performance Dashboard is a Power BI project designed to analyze banking transaction performance, customer value, merchant behavior, and risk signals. The dashboard helps identify where Aurora Banking is performing well, which customer segments drive the most value, and which areas require attention due to transaction failures or risk exposure.
-
-The project is built around four main analytical views:
-
-1. **Overview** — overall Aurora performance and transaction trends.
-2. **Customer Segment** — customer value, activity, credit score, and age-based insights.
-3. **Merchant** — channel performance, merchant category contribution, and spending behavior.
-4. **Risk** — failed transaction behavior, insufficient balance exposure, and high-risk segments.
-
-A simple **Insight Page** is also included to summarize the most important business findings in a clear, text-based format.
+**Author:** Phan Minh Tan  
+**Tools Used:** Power BI, Power Query, DAX, Design Thinking  
+**Domain:** Retail Banking Analytics  
 
 ---
 
-## Key Business Questions
+## 📌 Background & Overview
 
-This dashboard is designed to answer the following questions:
+### Objective
 
-- How is Aurora Banking’s overall transaction performance trending?
+This project builds an **Aurora Banking Performance Dashboard** to help the Head of Retail Banking monitor customer activity, transaction performance, merchant behavior, and risk signals in one centralized Power BI report.
+
+The dashboard focuses on one main business question:
+
+> **How can Aurora Banking grow transaction value while keeping customer quality and risk under control?**
+
+### What is this project about?
+
+Aurora Banking needs to understand whether transaction growth is healthy, sustainable, and aligned with credit-risk quality. Instead of only tracking transaction volume, the dashboard connects customer activity, transaction success, merchant performance, card usage, credit score, and failed transaction behavior.
+
+The analysis supports the business in answering:
+
+- How is overall banking performance trending?
 - Which customer segments generate the most value and growth potential?
 - Where does transaction performance vary across channels and merchants?
-- Which customer or merchant segments show higher risk and require attention?
-- What are the main drivers behind transaction success, value, and failure?
+- Which segments show the highest risk and require attention?
+- What actions should be prioritized by business, operations, and risk teams?
+
+### Who is this project for?
+
+The main stakeholder is the **Head of Retail Banking**.
+
+This stakeholder needs a dashboard to:
+
+- Monitor business performance across customers, transactions, merchants, and risk.
+- Identify valuable customer segments for growth.
+- Detect weak or risky transaction patterns early.
+- Understand which merchant categories and card types drive transaction value.
+- Support weekly/monthly reviews with Business, Operations, and Risk teams.
+
+### Project Outcome
+
+The final Power BI dashboard includes five main pages:
+
+- **Overview** – Track total performance, VPAC, active customers, transaction value, transaction volume, success rate, card type, channel mix, and credit-score contribution.
+- **Customer Segment** – Identify which customer segments generate the most value and where growth potential exists.
+- **Merchant** – Analyze merchant categories, channels, card types, and transaction behavior.
+- **Risk** – Monitor failed transactions, insufficient balance, high-risk customers, and risky segments.
+- **Insight** – Summarize key business findings and recommended areas of attention.
 
 ---
 
-## Key Insights
+## 🧠 Design Thinking Process
 
-- Aurora Banking shows strong overall performance with a high transaction success rate of approximately **98.26%**.
-- Total transaction volume is around **157K transactions**, with approximately **$6.707M** in Net Successful Transaction Value.
-- Transaction value and volume show a noticeable decline toward the end of the year, especially around **November and December**.
-- **Debit cards** are the main transaction driver, contributing the largest share of transaction value.
-- Customers in the **Good credit score band** generate the highest value, making them a key segment for retention and growth.
-- Mature customer groups, especially **45–54** and **55+**, contribute strongly to transaction value.
-- Spending is concentrated in essential merchant categories such as **Food & Grocery**, **Retail & Consumer Goods**, **Financial & Insurance**, and **Utilities & Telecom**.
-- Failed transactions remain relatively low but still represent a value leakage opportunity, with insufficient balance being one of the main risk drivers.
+The dashboard was designed using a Design Thinking approach to make sure the analysis starts from stakeholder needs before moving into dashboard design.
 
----
+### 1️⃣ Empathize - 5W1H
 
-## Dataset
+![5W1H](image/5w1h.png)
 
-The dashboard is built using the following datasets:
+The 5W1H stage defines the key stakeholder, dashboard purpose, decision context, and expected business actions.  
+The main stakeholder is the **Head of Retail Banking**, who needs to balance customer growth, transaction performance, and risk control.
 
-| File | Description |
-|---|---|
-| `transactions_data.xlsx` | Transaction-level data including transaction amount, status, channel, merchant, and card information. |
-| `users_data.xlsx` | Customer demographic and profile information. |
-| `cards_data.xlsx` | Card-level information such as card type and card brand. |
-| `mcc_codes.xlsx` | Merchant category code reference data. |
+### 2️⃣ Empathy Map
 
-These files are used to build relationships, calculate KPIs, and create dashboard visuals in Power BI.
+![Empathy Map](image/empathy_map.png)
 
----
+The empathy map captures what the stakeholder thinks, sees, says, and needs.  
+The main pain point is that growth, customer behavior, merchant performance, and risk indicators are often viewed separately, making it difficult to decide where to grow, where to fix, and where to protect.
 
+### 3️⃣ Northstar Metric
 
-## Dashboard Preview
+![Northstar Metric](image/northstar.png)
 
-### Overview Page
-![Overview Page](images/overview.png)
+The selected Northstar Metric is:
 
-### Customer Segment Page
-![Customer Segment Page](images/customer.png)
+> **Value per Active Customer (VPAC)**
 
-### Merchant Analysis Page
-![Merchant Analysis Page](images/merchant.png)
+VPAC was selected because it reflects how much net successful transaction value is generated by each active customer. This metric balances customer activation, transaction value, and portfolio quality instead of focusing only on total transaction volume.
 
-### Risk Analysis Page
-![Risk Analysis Page](images/risk.png)
+### 4️⃣ Define Point of View & Growth Formula
 
-### Insight Page
-![Insight Page](images/insight.png)
----
+![Define POV and Growth Formula](image/def_pov_gf.png)
 
-## Tools Used
+The dashboard is designed around four important points of view:
 
-- **Power BI Desktop** — dashboard design, data modeling, DAX measures, and visualization.
-- **Microsoft Excel** — source data files.
-- **Power Query** — data cleaning, transformation, and preparation.
-- **DAX** — KPI calculations and business measures.
+1. **Portfolio Health Outcome** – Understand whether growth is healthy and sustainable.
+2. **Potential Customer Segments** – Identify customer groups with high value or growth opportunity.
+3. **Merchant / Region Performance** – Detect where transaction value varies across merchants, regions, and channels.
+4. **Credit Risk Warning** – Monitor early signals of failed transactions, insufficient balance, and credit-quality issues.
+
+### 5️⃣ Ideate - Brainstorming
+
+![Brainstorming](image/brainstorming.png)
+
+The brainstorming stage breaks down VPAC into measurable components such as active customers, transaction success rate, net successful transaction value, customer segments, merchant behavior, and risk guardrails.
+
+### 6️⃣ Ideate - Structure Idea
+
+![Structure Idea](image/structure_idea.png)
+
+The structure idea stage organizes dashboard pages from executive-level metrics to detailed action views, helping stakeholders move from monitoring to diagnosis and action.
 
 ---
 
-## Suggested Repository Structure
+## 🧩 Data Model
 
-```text
-Aurora-Banking-Dashboard/
-│
-├── README.md
-├── Aurora_Banking_Dashboard.pbix
-│
-├── data/
-│   ├── transactions_data.xlsx
-│   ├── users_data.xlsx
-│   ├── cards_data.xlsx
-│   └── mcc_codes.xlsx
-│
-├── images/
-│   ├── overview.png
-│   ├── customer_segment.png
-│   ├── merchant.png
-│   ├── risk.png
-│   └── insight.png
-│
-└── docs/
-    └── business_insights.md
-```
+![Data Model](image/datamodel.png)
+
+The model connects customer, transaction, card, merchant, channel, region, and risk-related information to support performance and risk analysis.  
+Key calculations include VPAC, total transactions, successful transaction value, success rate, failed transaction rate, insufficient balance rate, and customer-level contribution.
 
 ---
 
-## How to Open the Project
+## 📊 Key Insights & Visualizations
 
-1. Clone or download this repository.
-2. Open `Aurora_Banking_Dashboard.pbix` using Power BI Desktop.
-3. Make sure the Excel source files are stored in the `data/` folder.
-4. If needed, update the data source path in Power Query.
-5. Refresh the dashboard to load the latest data.
+### 📋 I. Overview Page
 
----
+![Overview Page](image/overview.png)
 
-## How to Push This Project to GitHub
+#### Key Findings
 
-### 1. Create a new repository on GitHub
-
-Create a new repository, for example:
-
-```text
-Aurora-Banking-Dashboard
-```
-
-### 2. Open the project folder in terminal
-
-```bash
-cd path/to/Aurora-Banking-Dashboard
-```
-
-### 3. Initialize Git
-
-```bash
-git init
-```
-
-### 4. Add project files
-
-```bash
-git add .
-```
-
-### 5. Commit the files
-
-```bash
-git commit -m "Initial commit: Aurora Banking Power BI dashboard"
-```
-
-### 6. Connect to your GitHub repository
-
-Replace the URL below with your own GitHub repository URL:
-
-```bash
-git remote add origin https://github.com/your-username/Aurora-Banking-Dashboard.git
-```
-
-### 7. Push to GitHub
-
-```bash
-git branch -M main
-git push -u origin main
-```
+- Aurora Banking recorded **157K total transactions** and **$6.707M in Net Successful Transaction Value**, both increasing by **3.1% vs prior period**.
+- **VPAC reached $22.13K**, showing how much transaction value each active customer generated during the period.
+- The bank has **2,000 total customers**, but only **303 active customers**, meaning active customers account for only **15.15%** of the portfolio while **84.85% remain inactive**.
+- The overall **Success Rate is 98.26%**, suggesting transaction quality is generally strong, but risk indicators still need monitoring.
+- Debit cards drive the highest transaction value at around **$3.95M**, making Debit the core card type for transaction growth.
+- Customers in the **Good credit score band** generate the highest transaction value at around **$3.7M**, far above other score groups.
+- Transaction value and transaction volume drop noticeably in **November and December**, indicating a potential year-end slowdown that should be monitored.
 
 ---
 
-## Notes
+### 👥 II. Customer Segment Page
 
-- If the `.pbix` file is large, consider using **Git LFS**.
-- Avoid uploading sensitive or private customer data to a public repository.
-- If this project is for portfolio use, use anonymized or sample data only.
-- Add dashboard screenshots to the `images/` folder so visitors can preview the project without opening Power BI.
+![Customer Segment Page](image/customer.png)
+
+#### Key Findings
+
+- Aurora Banking has **303 active customers** generating **$6.707M** in transaction value, with **VPAC at $22.13K**.
+- Active customers make an average of **518.89 transactions per user**, showing strong usage intensity among the active base.
+- The **55+ age group** generates the highest transaction value at around **$2.47M**, followed by the **45–54** and **35–44** groups, showing that mature customers are the strongest value drivers.
+- Customers in the **Good credit score band** generate the highest transaction value at around **$3.74M**.
+- VPAC is highest in the **Good** and **Excellent** credit score bands, at around **$9.3K** and **$9.2K**, suggesting stronger value per customer among healthier credit profiles.
+- The **45–54 age group** shows the highest transaction frequency with about **532 average transactions per customer**, followed closely by **35–44** and **55+**.
+- Failed Transaction Rate is highest in the **Excellent** credit score band at **2.09%**, showing that even strong credit groups can still generate operational or transaction friction.
 
 ---
 
-## Author
+### 🏪 III. Merchant Page
 
-Created as part of a Power BI analytics project for Aurora Banking performance, customer segmentation, merchant performance, and transaction risk analysis.
+![Merchant Page](image/merchant.png)
+
+#### Key Findings
+
+- The merchant page shows **157K total transactions**, **$6.707M Net Successful Transaction Value**, **$22.13K VPAC**, and a **98.26% Success Rate**.
+- The average transaction value is **$43.72**, slightly increasing by **0.2% vs previous year**.
+- Debit contributes the largest transaction value at around **$3.85M**, while Credit contributes around **$2.65M** and Prepaid Debit contributes around **$0.21M**.
+- **Food & Grocery** is the largest merchant category, generating about **$1.22M**, or **18.25%** of total transaction value.
+- **Retail & Consumer Goods** ranks second with about **$1.09M**, or **16.27%** of total transaction value.
+- Other important merchant categories include **Utilities & Telecom ($763.6K)**, **Financial & Insurance ($703.1K)**, and **Fuel & Auto Services ($666.5K)**.
+- Transaction channel mix is dominated by **Chip Transaction at 71.31%**, followed by **Swipe Transaction at 17.38%** and **Online Transaction at 11.31%**.
+- Essential Spending represents the largest high-potential customer behavior group, with about **73K transactions**, accounting for **46.72%** of the selected transaction base.
+
+---
+
+### ⚠️ IV. Risk Page
+
+![Risk Page](image/risk.png)
+
+#### Key Findings
+
+- The overall **Failed Transaction Rate is 1.74%**, with **Failed Transaction Value of $167.779K**.
+- The **Insufficient Balance Rate is 1.13%**, making insufficient balance one of the key risk drivers to monitor.
+- The dashboard identifies **49 high-risk customers**, which should be prioritized for risk review or intervention.
+- The average credit score is **719.75**, suggesting the overall portfolio is healthy, but risk pockets still exist.
+- By credit score band, **Excellent** customers show the highest Failed Transaction Rate at **2.09%**, followed by **Very Good at 1.86%** and **Good at 1.67%**.
+- By card type, **Debit** has the highest Failed Transaction Rate at **1.80%**, while **Credit** has the highest Insufficient Balance Rate at **1.26%**.
+- By merchant group, **Financial & Services** has the highest Failed Transaction Rate at **2.58%**, while **Essential Spending** contributes the largest failed transaction value at around **$60.68K**.
+- The **<25 age group** shows the highest early risk signal, with a Failed Transaction Rate of **2.45%** and Insufficient Balance Rate of **1.17%**.
+
+---
+
+### 💡 V. Insight Page
+
+![Insight Page](image/insight.png)
+
+#### Key Findings
+
+- Overall performance is strong with **157K transactions**, **$6.707M in Net Successful Transaction Value**, and a **98.26% Success Rate**.
+- Performance momentum weakens at year-end because both transaction value and volume decline in **November and December**.
+- High-value customers are concentrated in stronger credit segments, especially the **Good credit score band**, which contributes about **$3.7M** in transaction value.
+- Debit cards are the most important payment product, contributing about **$3.95M** in transaction value.
+- Customer spending is concentrated in essential categories such as **Food & Grocery**, **Retail & Consumer Goods**, **Financial & Insurance**, and **Utilities & Telecom**.
+- Risk is manageable overall, but failed transactions deserve attention because the Failed Transaction Rate is around **1.74%** and Failed Transaction Value is around **$167.8K**.
+- Younger customers, especially the **<25 age group**, show higher early risk signals and should be monitored more carefully.
+
+---
+
+## 🔎 Final Conclusion & Recommendation
+
+| Focus Area | Insight | Recommendation |
+|---|---|---|
+| Portfolio Growth | Aurora Banking shows strong transaction performance with **157K transactions** and **$6.707M Net Successful Transaction Value**. | Continue tracking VPAC and successful transaction value as core business growth metrics. |
+| Customer Activation | Only **303 out of 2,000 customers** are active, leaving a large inactive customer base. | Design activation campaigns to convert inactive customers into active users, especially in low-usage but healthy credit segments. |
+| Customer Value | Mature customers and the **Good credit score band** generate the highest transaction value. | Prioritize high-value segments for retention, upsell, and personalized banking offers. |
+| Card Strategy | Debit cards generate around **$3.95M**, making them the main transaction driver. | Improve Debit card usage experience and expand Debit-based engagement campaigns. |
+| Merchant Strategy | Essential spending categories such as Food & Grocery and Retail & Consumer Goods drive the largest transaction value. | Strengthen merchant partnerships in high-value everyday spending categories. |
+| Risk Management | Failed Transaction Rate is **1.74%**, Insufficient Balance Rate is **1.13%**, and high-risk customers total **49**. | Build early-warning monitoring for failed transactions, insufficient balance, younger customers, and risky merchant groups. |
+| Year-End Performance | Transaction value and transaction volume decline in **November and December**. | Investigate seasonal behavior and prepare retention or transaction stimulation campaigns before year-end. |
+
+### Final Recommendation
+
+Aurora Banking should use **VPAC** as the main performance metric to balance customer growth, transaction value, and risk quality. The business should focus on activating inactive customers, retaining high-value mature segments, scaling Debit card usage, strengthening essential merchant partnerships, and monitoring early risk signals from failed transactions and insufficient balance behavior.
+
+---
+
+## 🛠️ Skills Applied
+
+- Power BI dashboard design
+- Power Query data transformation
+- DAX measure creation
+- Data modeling for banking analytics
+- Customer segmentation analysis
+- Transaction performance analysis
+- Merchant and channel analysis
+- Risk monitoring and early-warning analysis
+- Design Thinking for stakeholder-centered dashboard development
+- Business storytelling and insight communication
+
+---
+
+## 👤 Author
+
+**Phan Minh Tan**  
+Aspiring Data Analyst with interests in Power BI, SQL, Python, data visualization, and business analytics.
